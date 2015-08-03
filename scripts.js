@@ -503,7 +503,7 @@ function outer() {
 
 
 // function diceRoller() {
-//   return Math.ceil(Math.random()*6);
+//   return Math.ceil(Math.random() * 6);
 // }
 
 // console.log(diceRoller());
@@ -511,24 +511,53 @@ function outer() {
 // function diceRoller(numDice) {
 //   var output = [];
 //     for (var i =0; i < numDice; i++){
-//      output.push(Math.ceil(Math.random()*6));
+//      output.push(Math.ceil(Math.random() * 6));
 //   }
 //   return output;
 // }
 
 // console.log(diceRoller(3));
 
-function diceRoller(numDice, numSpecified) {
-  var output = [];
-    for (var i = 0; i < numDice; i++){
-     output.push(Math.ceil(Math.random() * numSpecified));
-  }
-  return output;
+// function diceRoller(numDice, numSpecified) {
+//   var output = [];
+//    if (numSpecified === undefined) {
+//     numSpecified = 6;
+//    }
+//    for (var i = 0; i < numDice; i++){
+//      output.push(Math.ceil(Math.random() * numSpecified));
+//   }
+//   return output;
+// }
+
+// console.log(diceRoller(10);
+
+function DiceRoller() {
+  
+  
+  this.hand = [];
+  this.roll = function(numRoll, numSpecified) {
+    numSpecified = numSpecified || 6;
+      var output = [];
+      for (var i = 0; i < numRoll; i++){
+       output.push(Math.ceil(Math.random() * numSpecified));
+      } 
+      this.hand = output;
+      return this.hand;
+    }
+
+
 }
+ 
+  var game = new DiceRoller();
 
-console.log(diceRoller(4, 12));
 
-
+ 
+  console.log(game.hand);
+  console.log(game.roll(6));
+  console.log(game.roll(7));
+  console.log(game.hand.length);
+ 
+ 
 
 
 
